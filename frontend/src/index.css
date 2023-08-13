@@ -1,0 +1,252 @@
+.homePageHeaderContainer{
+    background-color: #CF7500;
+}
+.homePageHeader{
+    font-size: 8vw; 
+    color: #1A1C20;
+}
+.homePageSubHeading{
+    color: #CF7500;
+}
+.helpIcon{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.graphContainer{
+    max-width: 1920px;
+    max-height: 70vh;
+}
+.lc-tooltip {
+    position: absolute;
+    left: 50px;
+    top:50px; /* Adjust this value as needed */
+    text-align: center;
+    padding: .5rem;
+    background: #FFFFFF;
+    color: #313639;
+    border: 1px solid #313639;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: 16px;
+}
+.line-chart {
+    width: 60vw; /* Make the container occupy all available width */
+    height: 80vh;
+    aspect-ratio: 16 / 9; /* Set the desired aspect ratio */
+}
+.heroText{
+    line-height: 32px;
+    font-weight: 600;
+}
+.buttonOrange{
+    background-color: 
+}
+
+/* CSS */
+.orangeHoverButton{
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid #CF7500;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #e88400;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  max-height: 50px;
+  min-width: 0;
+  max-width: 150px;
+  outline: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.orangeHoverButton:hover {
+  color: #fff;
+  background-color: #CF7500;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.orangeHoverButton:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.blackHoverButton{
+    appearance: none;
+    background-color: #1A1C20;
+    border: 3px solid #1A1C20;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    max-height: 50px;
+    min-width: 0;
+    max-width: 150px;
+    outline: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+  }
+  
+  .blackHoverButton:hover {
+    color: #22252a;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .blackHoverButton:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  .iconSpacing{
+    margin-left: 10px;
+  }
+
+  .heroBackground{
+    background-color: linear-gradient(left, #CF7500 50%, #ffffff, 50%)!important;
+  }
+
+  #light{
+    position: relative;
+    top: 150px;
+}
+#lineh1{
+    position: absolute;
+    left: 0;
+    height: 10px;
+    background: #5500AA;
+    animation: lineH 4s 5s infinite linear;
+    z-index: -1;
+}
+#lineh2{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    height: 10px;
+    background: #AA2B00;
+    animation: lineH 5s 0.5s infinite linear;
+    z-index: -1;
+}
+#lineh3{
+    position: absolute;
+    left: 0;
+    top: 70px;
+    height: 10px;
+    background: #00D4FF;
+    animation: lineH 5s 2s infinite linear;
+    z-index: -1;
+}
+#lineh4{
+    position: absolute;
+    right: 0;
+    top: 100px;
+    height: 10px;
+    background: #00AA2B;
+    animation: lineH 5s 1s infinite linear;
+    z-index: -1;
+}
+#lineh5{
+    position: absolute;
+    left: 0;
+    top: 130px;
+    height: 10px;
+    background: #efb401;
+    animation: lineH 5s 4s infinite linear;
+    z-index: -1;
+}
+#lineh6{
+    position: absolute;
+    right: 0;
+    top: 160px;
+    height: 10px;
+    background: #AAFF00;
+    animation: lineH 4s 1s infinite linear;
+    z-index: -1;
+}
+#lineh7{
+    position: absolute;
+    right: 0;
+    top: 190px;
+    height: 10px;
+    background: #d54700;
+    animation: lineH 4s 0s infinite linear;
+    z-index: -1;
+}
+#lineh8{
+    position: absolute;
+    left: 0;
+    top: 220px;
+    height: 10px;
+    background: #00FFFF;
+    animation: lineH 4s 1.5s infinite linear;
+    z-index: -1;
+}
+#lineh9{
+    position: absolute;
+    left: 0;
+    top: 250px;
+    height: 10px;
+    background: #e2c485;
+    animation: lineH 5s 2s infinite linear;
+    z-index: -1;
+}
+#lineh10{
+    position: absolute;
+    right: 0;
+    top: 280px;
+    height: 10px;
+    background: #005580;
+    animation: lineH 4s 3s infinite linear;
+    z-index: -1;
+}
+#lineh11{
+    position: absolute;
+    right: 0;
+    top: 310px;
+    height: 10px;
+    background: #CF7500;
+    animation: lineH 4s 1s infinite linear;
+    z-index: -1;
+}
+#lineh12{
+    position: absolute;
+    right: 0;
+    top: 340px;
+    height: 10px;
+    background: #F0A500;
+    animation: lineH 6s 1s infinite linear;
+    z-index: -1;
+}
+@keyframes lineH{
+    0%{
+        width: 0%;
+    }
+    100%{
+width: 95%;opacity: 0;
+}
+}
+
