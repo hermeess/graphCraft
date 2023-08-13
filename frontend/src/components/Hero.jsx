@@ -2,29 +2,10 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector } from "react-redux";
 import { FaCalendarAlt } from "react-icons/fa";
+import { format } from "date-fns";
 
 const Hero = () => {
   const { userInfo } = useSelector((state) => state.auth);
-  const formatDate = (dateString) => {
-    const options = { day: "numeric", month: "long", year: "numeric" };
-    const date = new Date(dateString);
-    const day = date.toLocaleString("en-US", { day: "numeric" });
-    const month = date.toLocaleString("en-US", { month: "long" });
-    const year = date.toLocaleString("en-US", { year: "numeric" });
-
-    let daySuffix;
-    if (day === "1" || day === "21" || day === "31") {
-      daySuffix = "st";
-    } else if (day === "2" || day === "22") {
-      daySuffix = "nd";
-    } else if (day === "3" || day === "23") {
-      daySuffix = "rd";
-    } else {
-      daySuffix = "th";
-    }
-
-    return `${day}${daySuffix} ${month} ${year}`;
-  };
 
   if (!userInfo) {
     return (
@@ -100,7 +81,7 @@ const Hero = () => {
               <h3 className="text-center m-4 d-flex justify-content-center">
                 <FaCalendarAlt />
                 <span className="iconSpacing">
-                  {formatDate(new Date().toLocaleString())}
+                  {format(new Date(), "do MMMM yyyy")}
                 </span>
               </h3>
             </Col>
