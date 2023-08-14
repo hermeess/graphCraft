@@ -1,6 +1,3 @@
-.homePageHeaderContainer{
-    background-color: #CF7500;
-}
 .homePageHeader{
     font-size: 8vw; 
     color: #1A1C20;
@@ -132,7 +129,7 @@
 
   #light{
     position: relative;
-    top: 150px;
+    z-index: -1;
 }
 #lineh1{
     position: absolute;
@@ -237,8 +234,44 @@
     right: 0;
     top: 340px;
     height: 10px;
-    background: #F0A500;
+    background: #bab2a1;
     animation: lineH 6s 1s infinite linear;
+    z-index: -1;
+}
+#lineh13{
+    position: absolute;
+    left: 0;
+    top: 370px;
+    height: 10px;
+    background: #276ec6;
+    animation: lineH 5.5s 1s infinite linear;
+    z-index: -1;
+}
+#lineh14{
+    position: absolute;
+    right: 0;
+    top: 400px;
+    height: 10px;
+    background: #5f808f;
+    animation: lineH 5s 1.5s infinite linear;
+    z-index: -1;
+}
+#lineh15{
+    position: absolute;
+    left: 0;
+    top: 430px;
+    height: 10px;
+    background: #d35547;
+    animation: lineH 6s 0s infinite linear;
+    z-index: -1;
+}
+#lineh16{
+    position: absolute;
+    right: 0;
+    top: 460px;
+    height: 10px;
+    background: #c2b90f;
+    animation: lineH 4.5s 1s infinite linear;
     z-index: -1;
 }
 @keyframes lineH{

@@ -45,6 +45,7 @@ const AddModalContent = ({ title, onSaveChanges, isNewGraph }) => {
               type="string"
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
+              autoFocus
             />
           </Form.Group>
         )}
@@ -65,8 +66,8 @@ const AddModalContent = ({ title, onSaveChanges, isNewGraph }) => {
             onChange={(e) => setDataVal(e.target.value)}
           />
         </Form.Group>
-        <Button className="mt-2 orangeHoverButton" onClick={handleSave}>
-          Save Changes
+        <Button className="mt-2" variant="dark" onClick={handleSave}>
+          Confirm
         </Button>
       </Form>
     </>

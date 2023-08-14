@@ -27,7 +27,7 @@ const ProfileScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error("Passwords do no match");
+      toast.error("Passwords do no match.");
     } else {
       try {
         const res = await updateProfile({
@@ -37,7 +37,7 @@ const ProfileScreen = () => {
           password,
         }).unwrap();
         dispatch(setCredentials({ ...res }));
-        toast.success("Success message!");
+        toast.success("Password update successful.");
       } catch (err) {
         toast.error(err?.data?.message || err.error);
       }

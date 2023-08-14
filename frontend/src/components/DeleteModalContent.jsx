@@ -1,8 +1,26 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 const DeleteModalContent = ({ data, onSaveChanges }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [onConfirm, setisConfirmed] = useState(false);
+  const [dataToBeSent, setDataToBeSent] = useState(false);
+
+  const onModalClose = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const onConfirmDelete = () => {
+    onSaveChanges(dataToBeSent, "delete data");
+    setIsOpen(!isOpen);
+    setDataToBeSent("");
+  };
+
+  const onNotConfirmDelete = () => {
+    setIsOpen(!isOpen);
+  };
+
   const formatDate = (isoDate) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(isoDate).toLocaleDateString(undefined, options);
@@ -29,7 +47,8 @@ const DeleteModalContent = ({ data, onSaveChanges }) => {
     if (formData.length === 0) {
       toast.error("No valid data selected.");
     } else {
-      onSaveChanges(formData, "delete data");
+      setDataToBeSent(formData);
+      setIsOpen(!isOpen);
     }
   };
   return (
@@ -52,9 +71,25 @@ const DeleteModalContent = ({ data, onSaveChanges }) => {
             />
           </div>
         ))}
-        <Button className="mt-2 orangeHoverButton" onClick={handleSave}>
-          Save Changes
+        <Button className="mt-2" onClick={handleSave} variant="dark">
+          Confirm delete
         </Button>
+        <Modal show={isOpen} onHide={onModalClose} size="sm" centered>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <div className="d-flex-row">
+              <p>Are you sure you want to delete?</p>
+              <div className="d-flex justify-content-around">
+                <Button variant="success" onClick={onConfirmDelete}>
+                  Yes
+                </Button>
+                <Button variant="secondary" onClick={onNotConfirmDelete}>
+                  No
+                </Button>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
       </Form>
     </>
   );

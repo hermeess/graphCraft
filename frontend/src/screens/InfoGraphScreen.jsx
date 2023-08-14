@@ -91,7 +91,7 @@ const InfoGraphScreen = () => {
           });
           dispatch(updateInfoGraphData(newInfographArr));
           refetch();
-          toast.success("Success Message!");
+          toast.success("New data is added.");
         } catch (err) {
           toast.error(err?.data?.message || err.error);
         }
@@ -105,7 +105,7 @@ const InfoGraphScreen = () => {
           const res = await createNewGraph(formData);
           dispatch(setInfoGraphData(data.infograph));
           refetch();
-          toast.success("Success Message!");
+          toast.success("New graph is created.");
         } catch (err) {
           toast.error(err?.data?.message || err.error);
         }
@@ -138,7 +138,7 @@ const InfoGraphScreen = () => {
           });
           dispatch(updateInfoGraphData(newInfographDataAfterDelete));
           refetch();
-          toast.success("Success Message!");
+          toast.success("Graph is deleted as there is no data points left.");
         } else {
           newUpdatedInfographData = {
             _id: deleteInfographObj._id,
@@ -158,7 +158,7 @@ const InfoGraphScreen = () => {
             });
             dispatch(updateInfoGraphData(newInfographDataAfterDelete));
             refetch();
-            toast.success("Success Message!");
+            toast.success("Selected data is deleted.");
           } catch (err) {
             toast.error(err?.data?.message || err.error);
           }

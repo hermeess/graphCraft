@@ -6,7 +6,7 @@ const CustomModal = ({ isOpen, onClose, _id, onSaveChanges, children }) => {
     onSaveChanges(_id, formData, actionType);
   };
   return (
-    <Modal show={isOpen} onHide={onClose}>
+    <Modal show={isOpen} onHide={onClose} centered>
       <Modal.Header closeButton>
         <Modal.Title></Modal.Title>
       </Modal.Header>

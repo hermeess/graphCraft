@@ -1,8 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector } from "react-redux";
-import { FaCalendarAlt } from "react-icons/fa";
-import { format } from "date-fns";
 
 const Hero = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -23,6 +21,10 @@ const Hero = () => {
           <div id="lineh10"></div>
           <div id="lineh11"></div>
           <div id="lineh12"></div>
+          <div id="lineh13"></div>
+          <div id="lineh14"></div>
+          <div id="lineh15"></div>
+          <div id="lineh16"></div>
         </div>
         <Container className="justify-content-center">
           <Row>
@@ -68,24 +70,33 @@ const Hero = () => {
     //this is where we return the info grpah, today's date and the exercises portion
     return (
       <div className="py-5 heroBackground">
+        <div id="light">
+          <div id="lineh1"></div>
+          <div id="lineh2"></div>
+          <div id="lineh3"></div>
+          <div id="lineh4"></div>
+          <div id="lineh5"></div>
+          <div id="lineh6"></div>
+          <div id="lineh7"></div>
+          <div id="lineh8"></div>
+          <div id="lineh9"></div>
+          <div id="lineh10"></div>
+          <div id="lineh11"></div>
+          <div id="lineh12"></div>
+          <div id="lineh13"></div>
+          <div id="lineh14"></div>
+          <div id="lineh15"></div>
+          <div id="lineh16"></div>
+        </div>
         <Container className="justify-content-center">
-          <Row className="homePageHeaderContainer">
+          <Row>
             <Col>
               <h1 className="text-center mb-4 homePageHeader">
                 Hello {userInfo.name}!
               </h1>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <h3 className="text-center m-4 d-flex justify-content-center">
-                <FaCalendarAlt />
-                <span className="iconSpacing">
-                  {format(new Date(), "do MMMM yyyy")}
-                </span>
-              </h3>
-            </Col>
-          </Row>
+
           <Row>
             <Col>
               <h5 className="text-center m-4 d-flex justify-content-center">
