@@ -32,6 +32,7 @@ const InfoGraphScreen = () => {
   const [modalContent, setModalContent] = useState(null);
   const [changesId, setChangesId] = useState(null);
   const [isHelpIconClicked, setHelpIconClicked] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const handleHelpModalClose = () => {
     setHelpIconClicked(false);
@@ -69,6 +70,11 @@ const InfoGraphScreen = () => {
   };
 
   const handleOnSaveChanges = async (_id, formData, actionType) => {
+    if (isSaving) {
+      return;
+    }
+    setIsSaving(true);
+
     switch (actionType) {
       case "add data":
         var currInfographData = data.infoGraph.find((obj) => obj._id === _id);
@@ -94,6 +100,8 @@ const InfoGraphScreen = () => {
           toast.success("New data is added.");
         } catch (err) {
           toast.error(err?.data?.message || err.error);
+        } finally {
+          setIsSaving(false);
         }
         break;
       case "new graph":
@@ -108,6 +116,8 @@ const InfoGraphScreen = () => {
           toast.success("New graph is created.");
         } catch (err) {
           toast.error(err?.data?.message || err.error);
+        } finally {
+          setIsSaving(false);
         }
         break;
       case "delete data":
@@ -139,6 +149,7 @@ const InfoGraphScreen = () => {
           dispatch(updateInfoGraphData(newInfographDataAfterDelete));
           refetch();
           toast.success("Graph is deleted as there is no data points left.");
+          setIsSaving(false);
         } else {
           newUpdatedInfographData = {
             _id: deleteInfographObj._id,
@@ -161,6 +172,8 @@ const InfoGraphScreen = () => {
             toast.success("Selected data is deleted.");
           } catch (err) {
             toast.error(err?.data?.message || err.error);
+          } finally {
+            setIsSaving(false);
           }
         }
         //
